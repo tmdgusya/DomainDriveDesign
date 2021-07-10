@@ -1,10 +1,11 @@
 package BookingStory;
 
+import BookingStory.policy.BookingPolicy;
 import BookingStory.policy.OverBookingPolicy;
 
 public class ReservationService {
 
-    OverBookingPolicy overBookingPolicy = new OverBookingPolicy();
+    BookingPolicy overBookingPolicy = new OverBookingPolicy();
 
     public int makeBooking(Cargo cargo, Voyage voyage) {
         if(!overBookingPolicy.isAllowed(cargo, voyage)) {
